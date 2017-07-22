@@ -3,4 +3,5 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
+    url(r'^(?P<event_hash>[a-f0-9]+)/$', views.detailed, name='detail')
 ]

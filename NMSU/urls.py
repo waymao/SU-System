@@ -1,4 +1,4 @@
-"""student_system URL Configuration
+"""NMSU URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.10/topics/http/urls/
@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import include,url
 from django.contrib import admin
+import events
 
 urlpatterns = [
-    url(r'^media/', include('media.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^events/', include('events.urls')),
+    url(r'^accounts/', include('accounts.urls')),
+    url(r'^$', events.views.index, name='index'),
 ]

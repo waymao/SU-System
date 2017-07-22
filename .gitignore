@@ -1,3 +1,9 @@
+# DB
+/db.sqlite3
+
+#Django
+migrations/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

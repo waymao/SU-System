@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}{{ event.name }} - 学生活动系统{% endblock %}
+
+{% block content %}
+    <div class="container">
+    <header class="page-header">
+        <h1>发现南模的活动</h1>
+        <p>查看活动的详情。</p>
+    </header>
+    <div id="list" class="table-responsive">
+    {% if event %}
+        <table class="eventlist table table-striped table-hover">
+        <thead>
+            <tr id="firstline">
+                <th>名称</th>
+                <th>事件日期</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="eventname"><a href="/events/{{ event.hash }}/">{{ event.name }}</a></td>
+                <td class="date">{{ event.date }}</td>
+            </tr>
+        </tbody>
+        </table>
+    {% else %}
+        <p>空空如也。<br>您访问了错误的网址</p>
+    {% endif %}
+    </div>
+    </div>
+{% endblock %}

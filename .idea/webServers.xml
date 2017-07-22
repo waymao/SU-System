@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="bac15a5a-4666-49f4-bb45-0c68c466b02a" name="HomeDebianDev" url="http://homelab.waymao.com:16850/">
+        <fileTransfer host="homelab.waymao.com" port="16851" rootFolder="/home/wyc" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="16851" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
