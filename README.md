@@ -1,2 +1,3 @@
-# school-activity-track-system
-Used to track and log detailed information of student activities (Art Festival or Nanmo Cup etc) in nanmo.
+# SU-System
+Supposed to manage detailed information of student activities.
+Not yet finished or approved by my high school. But hopefully the development will continue.
