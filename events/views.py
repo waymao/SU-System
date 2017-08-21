@@ -5,7 +5,7 @@ import datetime
 
 
 def index(request):
-    event_list = Event.objects.order_by('-date')
+    event_list = Event.objects.order_by('-time')
     return render(request, 'events/index.html', {'event_list': event_list})
 
 
