@@ -4,7 +4,7 @@
 {% block content %}
     <div class="container">
         <header class="page-header">
-            <h1>发现南模的活动</h1>
+            <h1>发现活动</h1>
             <p>查看活动的详情。</p>
         </header>
         <div id="detail" class="">
@@ -19,7 +19,14 @@
                     </span>
                 </h1>
                 <p>唯一id：{{ event.hash }}</p>
-                <p>日期：{{ event.date|date:'Y-m-d H:i' }}</p>
+                <p>日期：{{ event.time|date:'Y-m-d H:i' }}</p>
+                <p>
+                    {% if event.description == "" %}
+                        这个活动没有简介。
+                    {% else %}
+                        {{ event.description }}
+                    {% endif %}
+                </p>
             {% else %}
                 <p>空空如也。<br>您访问了错误的网址</p>
             {% endif %}

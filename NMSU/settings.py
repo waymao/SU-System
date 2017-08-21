@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'about.apps.AboutConfig',
     'crispy_forms',
+    'bootstrap3',
     'bootstrap3_datetime'
 ]
 

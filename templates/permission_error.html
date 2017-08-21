@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}登录成功{% endblock %}
+
+{% block content %}
+<div class="container">
+    <header class="page-header">
+        <h1>账户权限</h1>
+        <p>警告</p>
+    </header>
+    <div class="alert alert-danger alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                aria-hidden="true">&times;</span></button>
+        <strong>您没有此项操作的权限。</strong>
+    </div>
+</div>
+{% endblock %}

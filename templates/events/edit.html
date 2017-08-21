@@ -12,8 +12,8 @@
 {% block content %}
     <div class="container">
         <header class="page-header">
-            <h1>发现南模的活动</h1>
-            <p>查看活动的详情。</p>
+            <h1>发现活动</h1>
+            <p>修改活动的详情。</p>
         </header>
         {% if 'events' in perms %}
             {% if 'events.can_add_event' in perms %}
@@ -27,13 +27,13 @@
                             <div id="div_time" class="form-group row">
                                 <label for="id_time" class="col-lg-1 control-label">时间：</label>
                                 <div class=" col-lg-4">
-                                    <input class="form-control" name="time" required="True"
-                                           id="id_time_pickers"
-                                           value="{{ event.date|date:'Y-m-d H:i' }}">
+                                    <input class="form-control" name="time" required
+                                           id="id_time"
+                                           value="{{ event.time|date:'Y-m-d H:i' }}">
                                 </div>
                                 <script>
                                     $(function () {
-                                        $("#id_time_pickers").datetimepicker({"format": "YYYY-MM-DD HH:mm"});
+                                        $("#id_time").datetimepicker({"format": "YYYY-MM-DD HH:mm"});
                                     });
                                 </script>
                             </div>
