@@ -1,6 +1,14 @@
 {% extends "base.html" %}
 {% block title %}{{ event.name }} - 学生活动系统{% endblock %}
 
+{% block custom_head %}
+    <script src="https://cdn.bootcss.com/moment.js/2.18.1/moment.min.js"></script>
+    <script src="https://cdn.bootcss.com/moment.js/2.18.1/locale/zh-cn.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+    <link href="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css"
+          rel="stylesheet">
+{% endblock %}
+
 {% block content %}
     <div class="container">
         <header class="page-header">
@@ -9,11 +17,31 @@
         </header>
         {% if 'events' in perms %}
             {% if 'events.can_add_event' in perms %}
-                <div id="list" class="table-responsive">
+                <div id="list">
                     {% if event %}
-                        <h1>{{ event.name }}</h1>
-                        {% load crispy_forms_tags %}
-                        {% crispy form %}
+                        <div class="row">
+                            <label for="id_time" class="col-lg-1 control-label">名称：</label>
+                            <p class="col-lg-10">{{ event.name }}</p>
+                        </div>
+                        <form method="post" action="">
+                            <div id="div_time" class="form-group row">
+                                <label for="id_time" class="col-lg-1 control-label">时间：</label>
+                                <div class=" col-lg-4">
+                                    <input class="form-control" name="time" required="True"
+                                           id="id_time_pickers"
+                                           value="{{ event.date|date:'Y-m-d H:i' }}">
+                                </div>
+                                <script>
+                                    $(function () {
+                                        $("#id_time_pickers").datetimepicker({"format": "YYYY-MM-DD HH:mm"});
+                                    });
+                                </script>
+                            </div>
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <input type="submit" value="Submit" class="btn btn-primary col-lg-offset-1"/>
+                            </div>
+                        </form>
                     {% else %}
                         <p>空空如也。<br>您访问了错误的网址</p>
                     {% endif %}

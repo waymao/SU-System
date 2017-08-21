@@ -19,7 +19,7 @@
         {% for event in event_list %}
             <tr>
                 <td class="eventname"><a href="/events/{{ event.hash }}/">{{ event.name }}</a></td>
-                <td class="date">{{ event.date }}</td>
+                <td class="date">{{ event.date|date:'Y-m-d H:i' }}</td>
             </tr>
         {% endfor %}
         </tbody>

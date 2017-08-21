@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'events.apps.EventsConfig',
     'accounts.apps.AccountsConfig',
     'about.apps.AboutConfig',
-    'crispy_forms'
+    'crispy_forms',
+    'bootstrap3_datetime'
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
@@ -119,3 +120,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+
+DATE_FORMAT = 'Y-m-d'
+
+DATETIME_FORMAT = 'Y-m-d H:i'
