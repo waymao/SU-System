@@ -4,8 +4,13 @@
     <div class="container">
         <header class="page-header">
             <h1>发现活动</h1>
-            <p>所有已注册的活动已列在此处。</p>
+            <p>所有即将发生的活动已列在此处。</p>
         </header>
+        {% if 'events' in perms %}
+            {% if 'events.can_add_event' in perms %}
+                <p style="text-align: right"><a href="/events/new" class="btn btn-default">+</a></p>
+            {% endif %}
+        {% endif %}
         <div id="list" class="table-responsive">
             {% if event_list %}
                 <table class="eventlist table table-striped table-hover">
