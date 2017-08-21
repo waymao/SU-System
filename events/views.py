@@ -25,7 +25,7 @@ def edit(request, event_hash):
             # process the data in form.cleaned_data as required
             # ...
             # redirect to a new URL:
-            event.date = form1.cleaned_data['time']
+            event.time = form1.cleaned_data['time']
             event.save()
             return redirect("../")
 
