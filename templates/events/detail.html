@@ -7,7 +7,7 @@
             <h1>发现南模的活动</h1>
             <p>查看活动的详情。</p>
         </header>
-        <div id="list" class="table-responsive">
+        <div id="detail" class="">
             {% if event %}
                 <h1>{{ event.name }}
                     <span class="col-sm-offset-1">
@@ -19,7 +19,7 @@
                     </span>
                 </h1>
                 <p>唯一id：{{ event.hash }}</p>
-                <p>日期：{{ event.date }}</p>
+                <p>日期：{{ event.date|date:'Y-m-d H:i' }}</p>
             {% else %}
                 <p>空空如也。<br>您访问了错误的网址</p>
             {% endif %}
