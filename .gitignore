@@ -137,5 +137,9 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# Database
 db.sqlite3
-*.sqlite3
+
+# IDE files
+.idea/

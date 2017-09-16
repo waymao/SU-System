@@ -13,3 +13,12 @@ python manage.py migrate
 python manage.py runserver
 ```
 Tested using Python 3 on mac os and linux.
+
+## Currently developing:
+I am currently developing the club management function (see club branch). If you would like to test the club functions, please install the following extra python packages:
+```
+pip install django-tinymce django-wysiwyg
+```
+
+## Contributing
+If you would like to contribute, regardless of whether you are a student of Nanmo, or if you are interested in my project, please contact me.
