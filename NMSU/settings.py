@@ -24,7 +24,10 @@ SECRET_KEY = ')*@^@)t+_ertr0bh%5jd8g5%@&8-fat!2#2kc^4-xi1mc!n==+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'system.projects.wyc-cn.cn',
+    '127.0.0.1'
+]
 
 # Application definition
 
@@ -35,12 +38,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.flatpages',
+    'django.contrib.sites',
     'events.apps.EventsConfig',
     'accounts.apps.AccountsConfig',
     'about.apps.AboutConfig',
+    'clubs.apps.ClubsConfig',
     'crispy_forms',
     'bootstrap3',
-    'bootstrap3_datetime'
+    'bootstrap3_datetime',
+    'tinymce',
+    'django_wysiwyg'
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
@@ -109,7 +117,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 

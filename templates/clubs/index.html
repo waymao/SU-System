@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}学生活动系统{% endblock %}
+{% block content %}
+    <div class="container">
+        <header class="page-header">
+            <h1>社团列表</h1>
+        </header>
+        {% if 'clubs' in perms %}
+            {% if 'clubs.can_add_club' in perms %}
+                <p style="text-align: right"><a href="/clubs/new" class="btn btn-default">+</a></p>
+            {% endif %}
+        {% endif %}
+        <div id="list" class="table-responsive">
+            {% if club_list %}
+                <table class="clublist table table-striped table-hover">
+                    <thead>
+                    <tr id="firstline">
+                        <th>名称</th>
+                        <th>学年</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for club in club_list %}
+                        <tr>
+                            <td class="clubname"><a href="/clubs/{{ club.hash }}/">{{ club.name }}</a></td>
+                            <td class="year">{{ club.year }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p>空空如也。<br>尝试注册一个社团！</p>
+            {% endif %}
+        </div>
+{% endblock %}

@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block smalltitle %}修改：{{ event.name }}{% endblock %}
+{% block smalltitle %}修改：{{ club.name }}{% endblock %}
 
 {% block custom_head %}
     <script src="https://cdn.bootcss.com/moment.js/2.18.1/moment.min.js"></script>
@@ -7,36 +7,25 @@
     <script src="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
     <link href="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css"
           rel="stylesheet">
+    {{ form.media }}
 {% endblock %}
 
 {% block content %}
     <div class="container">
         <header class="page-header">
-            <h1>发现活动</h1>
-            <p>修改活动的详情。</p>
+            <h1>修改社团</h1>
         </header>
-        {% if 'events' in perms %}
-            {% if 'events.can_add_event' in perms %}
+        {% load bootstrap3 %}
+        {% if 'clubs' in perms %}
+            {% if 'clubs.can_add_club' in perms %}
                 <div id="list">
-                    {% if event %}
+                    {% if club %}
                         <div class="row">
                             <label for="id_time" class="col-lg-1 control-label">名称：</label>
-                            <p class="col-lg-10">{{ event.name }}</p>
+                            <p class="col-lg-10">{{ club.name }}</p>
                         </div>
                         <form method="post" action="">
-                            <div id="div_time" class="form-group row">
-                                <label for="id_time" class="col-lg-1 control-label">时间：</label>
-                                <div class=" col-lg-4">
-                                    <input class="form-control" name="time" required
-                                           id="id_time"
-                                           value="{{ event.time|date:'Y-m-d H:i' }}">
-                                </div>
-                                <script>
-                                    $(function () {
-                                        $("#id_time").datetimepicker({"format": "YYYY-MM-DD HH:mm"});
-                                    });
-                                </script>
-                            </div>
+                            {% bootstrap_form form %}
                             {% csrf_token %}
                             <div class="form-group">
                                 <input type="submit" value="Submit" class="btn btn-primary col-lg-offset-1"/>

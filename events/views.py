@@ -5,7 +5,12 @@ import datetime, base64, hashlib
 
 
 def index(request):
-    event_list = Event.objects.filter(time__gte=datetime.date.today()).order_by('time')
+    event_list = Event.objects.filter(time__gte=datetime.datetime.now()).order_by('time')
+    return render(request, 'events/index.html', {'event_list': event_list})
+
+
+def history(request):
+    event_list = Event.objects.filter(time__lte=datetime.datetime.now()).order_by('time')
     return render(request, 'events/index.html', {'event_list': event_list})
 
 
@@ -29,7 +34,7 @@ def edit(request, event_hash):
             # process the data in form.cleaned_data as required
             # ...
             # redirect to a new URL:
-            event.date = form1.cleaned_data['time']
+            event.time = form1.cleaned_data['time']
             event.save()
             return redirect("../")
 
@@ -72,5 +77,6 @@ def add_new(request):
     else:
         form = eventCreateForm()
         return render(request, 'events/new.html', {'form': form})
+
 
 # Create your views here.
