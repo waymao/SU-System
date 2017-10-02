@@ -35,12 +35,14 @@ def edit(request, event_hash):
             # ...
             # redirect to a new URL:
             event.time = form1.cleaned_data['time']
+            event.type = form1.cleaned_data['type']
+            event.description = form1.cleaned_data['description']
             event.save()
             return redirect("../")
 
     # if a GET (or any other method) we'll create a blank form
     else:
-        form = eventChangeForm()
+        form = eventChangeForm(initial={'description': event.description, 'time': event.time, 'type':event.type})
         return render(request, 'events/edit.html', {'event': event, 'form': form})
 
 

@@ -24,7 +24,7 @@
                     {% if event.description == "" %}
                         这个活动没有简介。
                     {% else %}
-                        {{ event.description }}
+                        {{ event.description|safe }}
                     {% endif %}
                 </p>
             {% else %}
