@@ -19,8 +19,11 @@ I am currently developing the club management function. If you would like to tes
 
 ## Functions to be implemented:
 Club (developing)
+
 Arts Festival
-Sports event
+
+Sports events
+
 Science & Tech Festival
 
 ## Contributing
