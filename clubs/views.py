@@ -33,13 +33,13 @@ def edit(request, club_hash):
             # process the data in form.cleaned_data as required
             # ...
             # redirect to a new URL:
-            Club.time = form1.cleaned_data['time']
-            Club.save()
+            club.description = form1.cleaned_data['description']
+            club.save()
             return redirect("../")
 
     # if a GET (or any other method) we'll create a blank form
     else:
-        form = clubChangeForm()
+        form = clubChangeForm(initial={'description': club.description})
         return render(request, 'clubs/edit.html', {'club': club, 'form': form})
 
 

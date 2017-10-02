@@ -48,7 +48,8 @@ INSTALLED_APPS = [
     'bootstrap3',
     'bootstrap3_datetime',
     'tinymce',
-    'django_wysiwyg'
+    'ckeditor',
+    'ckeditor_uploader'
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
@@ -133,3 +134,25 @@ STATIC_URL = '/static/'
 DATE_FORMAT = 'Y-m-d'
 
 DATETIME_FORMAT = 'Y-m-d H:i'
+
+MEDIA_ROOT = "/var/www/SU/SU-uploads"
+STATIC_ROOT = "/var/www/SU/SU-static"
+CKEDITOR_UPLOAD_PATH = "/editor_uploads/"
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': [
+            {'name': 'clipboard', 'items': ['Undo', 'Redo']},
+            {'name': 'styles', 'items': ['Styles', 'Format']},
+            {'name': 'basicstyles', 'items': ['Bold', 'Italic', 'Strike', '-', 'RemoveFormat']},
+            {'name': 'paragraph',
+             'items': ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote']},
+            {'name': 'links', 'items': ['Link', 'Unlink']},
+            {'name': 'insert', 'items': ['Image', 'EmbedSemantic', 'Table']},
+            {'name': 'tools', 'items': ['Maximize']},
+            {'name': 'editing', 'items': ['Scayt']}
+        ],
+        'height': 300,
+        'width': '100%'
+    },
+}

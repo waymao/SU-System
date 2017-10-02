@@ -23,6 +23,6 @@ urlpatterns = [
     url(r'^accounts/', include('accounts.urls')),
     url(r'^about/', include('about.urls')),
     url(r'^clubs/', include('clubs.urls')),
-    url(r'^tinymce/', include('tinymce.urls')),
+    url(r'^editor_uploads/', include('ckeditor_uploader.urls')),
     url(r'^$', events.views.index, name='index'),
 ]

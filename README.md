@@ -17,7 +17,7 @@ Tested using Python 3 on mac os and linux.
 ## Currently developing:
 I am currently developing the club management function (see club branch). If you would like to test the club functions, please install the following extra python packages:
 ```
-pip install django-tinymce django-wysiwyg
+pip install pillow django-ckeditor
 ```
 
 ## Contributing
