@@ -2,7 +2,7 @@
 Written for my school to manage detailed information of student activities.
 I haven't shown this to my high school yet. I plan to tell them my ideas and this project when all basic functions have been tested.
 
-One thing to keep in mind: **This project is still in development. Only basic features have been added. Please use it only if you understand what you are doing.**
+**This project is still in development. Only basic features have been added. Please use it only if you understand what you are doing.**
 
 ## Installation
 ```
@@ -15,10 +15,13 @@ python manage.py runserver
 Tested using Python 3 on mac os and linux.
 
 ## Currently developing:
-I am currently developing the club management function (see club branch). If you would like to test the club functions, please also install the following extra python packages:
-```
-pip install django-tinymce django-wysiwyg
-```
+I am currently developing the club management function. If you would like to test the club functions, please refer to the club branch for more info.
+
+## Functions to be implemented:
+Club (developing)
+Arts Festival
+Sports event
+Science & Tech Festival
 
 ## Contributing
-If you would like to contribute, regardless of whether you are a student of Nanmo, or if you are interested in my project, please contact me.
+If you would like to contribute or if you are interested in my project, whether you are a student of Nanmo or not, please contact me.
