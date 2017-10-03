@@ -25,6 +25,27 @@
                         {{ club.description|safe }}
                     {% endif %}
                 </p>
+                <h3>成员：</h3>
+                {% if member_list %}
+                    <table class="memberlist table table-striped table-hover">
+                        <thead>
+                        <tr id="firstline">
+                            <th>姓名</th>
+                            <th>类型</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for one_member in member_list %}
+                            <tr>
+                                <td class="memeber_name">{{ one_member.member.last_name }} {{ one_member.member.first_name }}</td>
+                                <td class="member_type">{{ one_member.get_Member_type_display }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                {% else %}
+                    <p>这个社团没有成员。</p>
+                {% endif %}
             {% else %}
                 <p>空空如也。<br>您访问了错误的网址</p>
             {% endif %}
