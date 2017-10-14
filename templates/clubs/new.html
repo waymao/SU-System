@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block smalltitle %}修改：{{ event.name }}{% endblock %}
+{% block smalltitle %}创建社团{% endblock %}
 
 {% block custom_head %}
     <script src="https://cdn.bootcss.com/moment.js/2.18.1/moment.min.js"></script>
@@ -13,28 +13,19 @@
 {% block content %}
     <div class="container">
         <header class="page-header">
-            <h1>发现活动</h1>
-            <p>修改活动的详情。</p>
+            <h1>创建社团</h1>
         </header>
         {% load bootstrap3 %}
         {% if 'events' in perms %}
             {% if 'events.can_add_event' in perms %}
-                <div id="list">
-                    {% if event %}
-                        <div class="row">
-                            <label for="id_time" class="col-lg-1 control-label">名称：</label>
-                            <p class="col-lg-10">{{ event.name }}</p>
+                <div id="main">
+                    <form method="post" action="">
+                        {% bootstrap_form form %}
+                        {% csrf_token %}
+                        <div class="form-group" style="text-align: center">
+                            <input type="submit" value="提交" class="btn btn-primary col-lg-offset-1"/>
                         </div>
-                        <form method="post" action="">
-                            {% bootstrap_form form %}
-                            {% csrf_token %}
-                            <div class="form-group">
-                                <input type="submit" value="Submit" class="btn btn-primary col-lg-offset-1"/>
-                            </div>
-                        </form>
-                    {% else %}
-                        <p>空空如也。<br>您访问了错误的网址</p>
-                    {% endif %}
+                    </form>
                 </div>
             {% else %}
                 <div class="alert alert-danger alert-dismissible" role="alert">

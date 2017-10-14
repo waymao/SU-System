@@ -14,6 +14,7 @@ class Event(models.Model):
     def __str__(self):
         return self.name + " at " + str(self.time)
 
+
 class AttendeeInfo(models.Model):
     event_ref = models.ForeignKey(Event, on_delete=models.CASCADE)
     attendee = models.ForeignKey(User, on_delete=models.CASCADE)

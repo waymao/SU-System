@@ -1,16 +1,11 @@
 {% extends "base.html" %}
 
-{% block title %}学生活动系统{% endblock %}
+{% block smalltitle %}活动历史{% endblock %}
 {% block content %}
     <div class="container">
         <header class="page-header">
-            <h1>发现活动</h1>
+            <h1>历史活动</h1>
         </header>
-        {% if 'events' in perms %}
-            {% if 'events.can_add_event' in perms %}
-                <p style="text-align: right"><a href="/events/new" class="btn btn-default">+</a></p>
-            {% endif %}
-        {% endif %}
         <div id="list" class="table-responsive">
             {% if event_list %}
                 <table class="eventlist table table-striped table-hover">
@@ -30,7 +25,7 @@
                     </tbody>
                 </table>
             {% else %}
-                <p>空空如也。<br>尝试注册一次活动！</p>
+                <p>没有可供显示的历史活动。</p>
             {% endif %}
         </div>
 {% endblock %}

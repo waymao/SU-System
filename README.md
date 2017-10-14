@@ -15,7 +15,10 @@ python manage.py runserver
 Tested using Python 3 on mac os and linux.
 
 ## Currently developing:
-I am currently developing the club management function. If you would like to test the club functions, please refer to the club branch for more info.
+I am currently developing the club management function (see club branch). If you would like to test the club functions, please install the following extra python packages:
+```
+pip install pillow django-ckeditor
+```
 
 ## Functions to be implemented:
 Club (developing)

@@ -24,7 +24,10 @@ SECRET_KEY = ')*@^@)t+_ertr0bh%5jd8g5%@&8-fat!2#2kc^4-xi1mc!n==+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'system.projects.wyc-cn.cn',
+    '127.0.0.1'
+]
 
 # Application definition
 
@@ -35,12 +38,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.flatpages',
+    'django.contrib.sites',
     'events.apps.EventsConfig',
     'accounts.apps.AccountsConfig',
     'about.apps.AboutConfig',
+    'clubs.apps.ClubsConfig',
     'crispy_forms',
     'bootstrap3',
-    'bootstrap3_datetime'
+    'bootstrap3_datetime',
+    'tinymce',
+    'ckeditor',
+    'ckeditor_uploader'
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
@@ -109,13 +118,13 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+# TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
@@ -125,3 +134,26 @@ STATIC_URL = '/static/'
 DATE_FORMAT = 'Y-m-d'
 
 DATETIME_FORMAT = 'Y-m-d H:i'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = "/var/www/SU/SU-uploads"
+STATIC_ROOT = "/var/www/SU/SU-static"
+CKEDITOR_UPLOAD_PATH = "editor/"
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': [
+            {'name': 'clipboard', 'items': ['Undo', 'Redo']},
+            {'name': 'styles', 'items': ['Styles', 'Format']},
+            {'name': 'basicstyles', 'items': ['Bold', 'Italic', 'Strike', '-', 'RemoveFormat']},
+            {'name': 'paragraph',
+             'items': ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote']},
+            {'name': 'links', 'items': ['Link', 'Unlink']},
+            {'name': 'insert', 'items': ['Image', 'EmbedSemantic', 'Table']},
+            {'name': 'tools', 'items': ['Maximize']},
+        ],
+        'height': 300,
+        'width': '100%',
+        'max-width': 2500
+    },
+}

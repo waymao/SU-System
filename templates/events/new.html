@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}创建活动 - 学生活动系统{% endblock %}
+{% block smalltitle %}创建活动{% endblock %}
 
 {% block custom_head %}
     <script src="https://cdn.bootcss.com/moment.js/2.18.1/moment.min.js"></script>
@@ -7,13 +7,13 @@
     <script src="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
     <link href="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css"
           rel="stylesheet">
+    {{ form.media }}
 {% endblock %}
 
 {% block content %}
     <div class="container">
         <header class="page-header">
             <h1>创建活动</h1>
-            <p>创建一个活动。</p>
         </header>
         {% load bootstrap3 %}
         {% if 'events' in perms %}
