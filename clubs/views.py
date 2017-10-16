@@ -7,6 +7,7 @@ import hashlib
 
 
 def index(request):
+    # calculate the current school year.
     eight_months = datetime.timedelta(8 * 365 / 12)
     current_year = (datetime.date.today() - eight_months).year
     club_list = Club.objects.filter(year=current_year).order_by('name')

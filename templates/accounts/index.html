@@ -14,8 +14,51 @@
             <h1>账户管理</h1>
             <p>在这里管理你的账户。</p>
         </div>
-        <div class="col-md-6 login_div">
-            <a href="/accounts/logout">登出</a>
+        <!--<div class="login_div">
+            <a href="/accounts/logout" class="btn btn-default">登出</a>
+        </div>-->
+        <div>
+            {% load bootstrap3 %}
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active">
+                    <a href="#change_passwd" aria-controls="home" role="tab" data-toggle="tab">登录信息</a>
+                </li>
+                <li role="presentation">
+                    <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">个人信息</a>
+                </li>
+                <li role="presentation">
+                    <a href="#class_info" aria-controls="messages" role="tab" data-toggle="tab">班级信息</a>
+                </li>
+                <li role="presentation">
+                    <a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">更多设置</a>
+                </li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="change_passwd">
+                    <form method="post" action="change_password/">
+                        {% bootstrap_form form_change_password %}
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <input type="submit" value="修改密码" class="btn btn-primary col-lg-offset-1"/>
+                        </div>
+                    </form>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="profile">
+                    <form method="post" action="change_profile/">
+                        {% bootstrap_form form_profile %}
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <input type="submit" value="修改密码" class="btn btn-primary col-lg-offset-1"/>
+                        </div>
+                    </form>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="class_info">...</div>
+                <div role="tabpanel" class="tab-pane" id="settings">...</div>
+            </div>
+
         </div>
     </div>
 {% endblock %}

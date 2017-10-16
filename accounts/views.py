@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
+from . import forms
 
 
 def index(request):
     if request.user.is_authenticated:
-        return render(request, 'accounts/index.html')
+        return render(request, 'accounts/index.html', {'form_change_password': forms.UserPasswordChangeForm,
+                                                       'form_profile': forms.UserInfoChangeForm})
     else:
         return redirect(log_user_in)
 
