@@ -45,14 +45,15 @@ INSTALLED_APPS = [
     'about.apps.AboutConfig',
     'clubs.apps.ClubsConfig',
     'crispy_forms',
-    'bootstrap3',
-    'bootstrap3_datetime',
+    'bootstrap4',
+    'bootstrap4_datetime',
+    'tempus_dominus',
     'tinymce',
     'ckeditor',
     'ckeditor_uploader'
 ]
 
-CRISPY_TEMPLATE_PACK = 'bootstrap3'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -118,13 +119,13 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'Asia/Shanghai'
+# TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
@@ -135,9 +136,10 @@ DATE_FORMAT = 'Y-m-d'
 
 DATETIME_FORMAT = 'Y-m-d H:i'
 
+MEDIA_URL = '/media/'
 MEDIA_ROOT = "/var/www/SU/SU-uploads"
 STATIC_ROOT = "/var/www/SU/SU-static"
-CKEDITOR_UPLOAD_PATH = "/editor_uploads/"
+CKEDITOR_UPLOAD_PATH = "editor/"
 
 CKEDITOR_CONFIGS = {
     'default': {
@@ -150,9 +152,9 @@ CKEDITOR_CONFIGS = {
             {'name': 'links', 'items': ['Link', 'Unlink']},
             {'name': 'insert', 'items': ['Image', 'EmbedSemantic', 'Table']},
             {'name': 'tools', 'items': ['Maximize']},
-            {'name': 'editing', 'items': ['Scayt']}
         ],
         'height': 300,
-        'width': '100%'
+        'width': '100%',
+        'max-width': 2500
     },
 }

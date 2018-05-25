@@ -11,7 +11,7 @@ def index(request):
 
 def history(request):
     event_list = Event.objects.filter(time__lte=datetime.datetime.now()).order_by('time')
-    return render(request, 'events/index.html', {'event_list': event_list})
+    return render(request, 'events/history.html', {'event_list': event_list})
 
 
 def detailed(request, event_hash):
@@ -35,12 +35,14 @@ def edit(request, event_hash):
             # ...
             # redirect to a new URL:
             event.time = form1.cleaned_data['time']
+            event.type = form1.cleaned_data['type']
+            event.description = form1.cleaned_data['description']
             event.save()
             return redirect("../")
 
     # if a GET (or any other method) we'll create a blank form
     else:
-        form = eventChangeForm()
+        form = eventChangeForm(initial={'description': event.description, 'time': event.time, 'type':event.type})
         return render(request, 'events/edit.html', {'event': event, 'form': form})
 
 

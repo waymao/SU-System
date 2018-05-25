@@ -3,12 +3,12 @@
 {% block title %}学生活动系统{% endblock %}
 {% block content %}
     <div class="container">
-        <header class="page-header">
-            <h1>发现活动</h1>
+        <header class="mt-4 mb-2 pb-2">
+            <h1 class="mt-4">发现活动</h1>
         </header>
         {% if 'events' in perms %}
             {% if 'events.can_add_event' in perms %}
-                <p style="text-align: right"><a href="/events/new" class="btn btn-default">+</a></p>
+                <p style="text-align: right"><a href="/events/new" class="btn btn-outline-primary">创建活动</a></p>
             {% endif %}
         {% endif %}
         <div id="list" class="table-responsive">

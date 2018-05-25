@@ -13,10 +13,10 @@
 
 {% block content %}
     <div class="container">
-        <header class="page-header">
-            <h1>修改社团</h1>
+        <header class="mt-4 mb-2 pb-2">
+            <h1 class="mt-4">修改社团</h1>
         </header>
-        {% load bootstrap3 %}
+        {% load bootstrap4 %}
         {% if 'clubs' in perms %}
             {% if 'clubs.can_add_club' in perms %}
                 <div id="list">

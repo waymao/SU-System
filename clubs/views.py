@@ -15,7 +15,8 @@ def index(request):
 
 def detailed(request, club_hash):
     club = get_object_or_404(Club, hash=club_hash)
-    return render(request, 'clubs/detail.html', {'club': club})
+    member_list = MemberInfo.objects.filter(ApprovalStatus='AP', club_ref=club)
+    return render(request, 'clubs/detail.html', {'club': club, "member_list": member_list})
 
 
 def edit(request, club_hash):
