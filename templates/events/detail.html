@@ -3,22 +3,18 @@
 
 {% block content %}
     <div class="container">
-        <header class="page-header">
-            <h1>发现活动</h1>
-            <p>查看活动的详情。</p>
-        </header>
+        <h1 class="mt-4 mb-3">活动详情</h1>
         <div id="detail" class="">
             {% if event %}
-                <h1>{{ event.name }}
+                <h2>{{ event.name }}
                     <span class="col-sm-offset-1">
                         {% if 'events' in perms %}
                             {% if 'events.can_add_event' in perms %}
-                                <a href="edit/" class="btn btn-default">编辑</a>
+                                <a href="edit/" class="btn btn-outline-primary">编辑</a>
                             {% endif %}
                         {% endif %}
                     </span>
-                </h1>
-                <p>唯一id：{{ event.hash }}</p>
+                </h2>
                 <p>日期：{{ event.time|date:'Y-m-d H:i' }}</p>
                 <p>
                     {% if event.description == "" %}

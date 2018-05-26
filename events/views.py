@@ -11,7 +11,7 @@ def index(request):
 
 def history(request):
     event_list = Event.objects.filter(time__lte=datetime.datetime.now()).order_by('time')
-    return render(request, 'events/index.html', {'event_list': event_list})
+    return render(request, 'events/history.html', {'event_list': event_list})
 
 
 def detailed(request, event_hash):

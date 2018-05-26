@@ -2,23 +2,16 @@
 {% block smalltitle %}创建活动{% endblock %}
 
 {% block custom_head %}
-    <script src="https://cdn.bootcss.com/moment.js/2.18.1/moment.min.js"></script>
-    <script src="https://cdn.bootcss.com/moment.js/2.18.1/locale/zh-cn.js"></script>
-    <script src="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
-    <link href="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css"
-          rel="stylesheet">
     {{ form.media }}
 {% endblock %}
 
 {% block content %}
     <div class="container">
-        <header class="page-header">
-            <h1>创建活动</h1>
-        </header>
-        {% load bootstrap3 %}
+        <h1 class="mt-4 mb-4">创建活动</h1>
+        {% load bootstrap4 %}
         {% if 'events' in perms %}
             {% if 'events.can_add_event' in perms %}
-                <div id="main">
+                <div id="main" style="position: relative">
                     <form method="post" action="">
                         {% bootstrap_form form %}
                         {% csrf_token %}

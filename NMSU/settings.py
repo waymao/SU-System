@@ -45,14 +45,15 @@ INSTALLED_APPS = [
     'about.apps.AboutConfig',
     'clubs.apps.ClubsConfig',
     'crispy_forms',
-    'bootstrap3',
-    'bootstrap3_datetime',
+    'bootstrap4',
+    'bootstrap4_datetime',
+    'tempus_dominus',
     'tinymce',
     'ckeditor',
     'ckeditor_uploader'
 ]
 
-CRISPY_TEMPLATE_PACK = 'bootstrap3'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
