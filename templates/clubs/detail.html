@@ -3,48 +3,51 @@
 
 {% block content %}
     <div class="container">
-        <header class="mt-4 mb-2">
+        <header class="mt-4 mb-4">
             <h1>社团</h1>
         </header>
         <div id="detail" class="">
             {% if club %}
-                <h2>{{ club.name }}
-                    <span class="col-sm-offset-1">
+                <div class="row">
+                    <h2 class="col-sm-10">{{ club.name }}</h2>
+                    <div class="col-sm-2">
                         {% if 'clubs' in perms %}
                             {% if 'clubs.can_add_club' in perms %}
-                                <a href="edit/" class="btn btn-default">编辑</a>
+                                <a href="edit/" class="btn btn-outline-primary">编辑</a>
                             {% endif %}
                         {% endif %}
-                    </span>
-                </h2>
-                <p>
-                    {% if club.description == "" %}
-                        这个社团没有简介。
-                    {% else %}
-                        {{ club.description|safe }}
-                    {% endif %}
-                </p>
-                <h3>成员：</h3>
-                {% if member_list %}
-                    <table class="memberlist table table-striped table-hover">
-                        <thead>
-                        <tr id="firstline">
-                            <th>姓名</th>
-                            <th>类型</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {% for one_member in member_list %}
-                            <tr>
-                                <td class="memeber_name">{{ one_member.member.last_name }} {{ one_member.member.first_name }}</td>
-                                <td class="member_type">{{ one_member.get_Member_type_display }}</td>
+                    </div>
+                </div>
+                <div class="mt-2">
+                    <p>
+                        {% if club.description == "" %}
+                            这个社团没有简介。
+                        {% else %}
+                            {{ club.description|safe }}
+                        {% endif %}
+                    </p>
+                    <h3>成员：</h3>
+                    {% if member_list %}
+                        <table class="memberlist table table-striped table-hover">
+                            <thead>
+                            <tr id="firstline">
+                                <th>姓名</th>
+                                <th>类型</th>
                             </tr>
-                        {% endfor %}
-                        </tbody>
-                    </table>
-                {% else %}
-                    <p>这个社团没有成员。</p>
-                {% endif %}
+                            </thead>
+                            <tbody>
+                            {% for one_member in member_list %}
+                                <tr>
+                                    <td class="memeber_name">{{ one_member.member.last_name }} {{ one_member.member.first_name }}</td>
+                                    <td class="member_type">{{ one_member.get_Member_type_display }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    {% else %}
+                        <p>这个社团没有成员。</p>
+                    {% endif %}
+                </div>
             {% else %}
                 <p>空空如也。<br>您访问了错误的网址</p>
             {% endif %}

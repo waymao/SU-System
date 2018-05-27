@@ -19,8 +19,8 @@
                 <div id="list" style="position: relative">
                     {% if event %}
                         <div class="row">
-                            <label for="id_time" class="col-lg-1 control-label">名称：</label>
-                            <p class="col-lg-10">{{ event.name }}</p>
+                            <label for="id_time" class="col-md-2 control-label">名称：</label>
+                            <p class="col-md-10"><b>{{ event.name }}</b></p>
                         </div>
                         <form method="post" action="">
                             {% bootstrap_form form %}

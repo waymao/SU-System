@@ -6,23 +6,26 @@
         <h1 class="mt-4 mb-3">活动详情</h1>
         <div id="detail" class="">
             {% if event %}
-                <h2>{{ event.name }}
-                    <span class="col-sm-offset-1">
+                <div class="row">
+                    <h2 class="col-sm-10">{{ event.name }}</h2>
+                    <div class="col-sm-2 edit_button_div">
                         {% if 'events' in perms %}
                             {% if 'events.can_add_event' in perms %}
                                 <a href="edit/" class="btn btn-outline-primary">编辑</a>
                             {% endif %}
                         {% endif %}
-                    </span>
-                </h2>
-                <p>日期：{{ event.time|date:'Y-m-d H:i' }}</p>
-                <p>
-                    {% if event.description == "" %}
-                        这个活动没有简介。
-                    {% else %}
-                        {{ event.description|safe }}
-                    {% endif %}
-                </p>
+                    </div>
+                </div>
+                <div class="mt-2">
+                    <p>日期：{{ event.time|date:'Y-m-d H:i' }}</p>
+                    <p>
+                        {% if event.description == "" %}
+                            这个活动没有简介。
+                        {% else %}
+                            {{ event.description|safe }}
+                        {% endif %}
+                    </p>
+                </div>
             {% else %}
                 <p>空空如也。<br>您访问了错误的网址</p>
             {% endif %}

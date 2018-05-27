@@ -19,6 +19,9 @@
         {% if 'events' in perms %}
             {% if 'events.can_add_event' in perms %}
                 <div id="main">
+                    <div class="row">
+                        <p class="col-12">学年：<span style="font-size:1.5em; color:darkred"><b>{{ club_current_year }}</b></span></p>
+                    </div>
                     <form method="post" action="">
                         {% bootstrap_form form %}
                         {% csrf_token %}
